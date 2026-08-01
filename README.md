@@ -63,21 +63,6 @@ The project demonstrates full-stack development by combining a **Flask backend**
 
 ---
 
-## 📂 Project Structure
-
-```text
-Application-Development/
-│
-├── main.py
-├── templates/
-├── static/
-├── database/
-├── README.md
-```
-
-> **Note:** Update this structure to match your final repository after removing unnecessary files such as `venv/`.
-
----
 
 ## 🗃️ Database Design
 
