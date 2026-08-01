@@ -1,0 +1,95 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Admin Home Page</h2>
+<p>Welcome back, {{ username }}!</p>
+<div>
+    <b>Administrator View:</b>
+    <table>
+        <tr>
+            <td><form action="{{ url_for('monthSaleAvg') }}" method="post" autocomplete="off">
+				<input type="text" name="month" placeholder="Month Sale Average" id="month" required>
+				<input type="submit" value="search">
+			</form></td>
+        </tr>
+        <tr>
+            <td><form action="{{ url_for('monthSaleCountSpecificProduct') }}" method="post" autocomplete="off">
+				<input type="text" name="month" placeholder="Month" id="month" required>
+                <input type="number" name="pid" placeholder="Pid" id="pid" required>
+				<input type="submit" value="search">
+			</form></td>
+        </tr>
+        <tr>
+            <td><form action="{{ url_for('suppliersList') }}" method="post" autocomplete="off">
+                <input type="number" name="pid" placeholder="Supplier List Pid" id="pid" required>
+				<input type="submit" value="search">
+			</form></td>
+        </tr>
+        <tr>
+            <td><form action="{{ url_for('cheapestItemSuppliersList') }}" method="post" autocomplete="off">
+                <input type="number" name="pid" placeholder="cheapest Supplier Pid" id="pid" required>
+				<input type="submit" value="search">
+			</form></td>
+        </tr>
+    </table>
+</div>
+<div>
+    <b>Standard User View:</b>
+    <table>
+        <tr>
+            <td><a href="http://localhost:5000/productList">نمایش لیست محصولات</a></td> 
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/usersList">نمایش لیست کاربرها</a></td> 
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/productCategoryList">نمایش لیست دسته بندی محصولات</a></td>
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/shoppingList">نمایش لیست سفارش ها</a></td>
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/top10usersMonth">نمایش لیست 10 کاربر برتر ماه</a></td>
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/top10usersWeek">نمایش لیست 10 کاربر برتر هفته</a></td>
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/bestSellingProductsMonth">نمایش لیست پرفروش ترین محصولات ماه</a></td>
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/bestSellingProductsWeek">نمایش لیست پرفروش ترین محصولات هفته</a></td>
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/specialOfferList">نمایش لیست پیشنهادات ویژه</a></td>
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/last10CostumersOrder">نمایش 10 سفارش آخر کاربر</a></td>
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/commentList/<pid>">نمایش نظرات محصول</a></td>
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/best3comments/<pid>">نمایش 3 تا از بهترین نظرات محصول</a></td>
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/worst3comments/<pid>">نمایش 3 تا از بهترین نظرات محصول</a></td>
+        </tr>
+        <tr>
+            <td><form action="{{ url_for('citySupplierList') }}" method="post" autocomplete="off">
+				<input type="text" name="city" placeholder="City Supplier List" id="city" required>
+				<input type="submit" value="search">
+			</form></td>
+        </tr>
+        <tr>
+            <td><form action="{{ url_for('cityUserList') }}" method="post" autocomplete="off">
+				<input type="text" name="city" placeholder="City User List" id="city" required>
+				<input type="submit" value="search">
+			</form></td>
+        </tr>
+    </table>
+</div>
+
+{% endblock %}

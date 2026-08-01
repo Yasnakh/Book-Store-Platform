@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>UserAccess</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="register">
+			<h1>Query</h1>
+			<div class="links">
+				<a href="{{ url_for('UserAccess') }}" class="active">Query</a>
+			</div>
+			<form action="{{ url_for('UserAccess') }}" method="post" autocomplete="off">
+				<label for="query">
+					<i class="fas fa-comment"></i>
+				</label>
+				<input type="text" name="query" placeholder="Query" id="query" required>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</body>
+</html>

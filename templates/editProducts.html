@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block title %}Product Form{% endblock %}
+
+{% block content %}
+
+<h2>Product Form</h2>
+<form action="/editProduct" method="post">
+    <label for="id">ID:</label>
+    <input type="text" id="pid" name="pid">
+    <br><br>
+    <label for="product_category">Product Category:</label>
+    <input type="text" id="product_category" name="product_category">
+    <br><br>
+    <label for="weight">Weight:</label>
+    <input type="text" id="weight" name="weight">
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
